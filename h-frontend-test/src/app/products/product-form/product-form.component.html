@@ -1,0 +1,63 @@
+<div class="container">
+  <h1 class="title">Formulario de Tareas</h1>
+  <div class="divider"></div>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="fields-container">
+      <div class="column">
+
+        <div class="field">
+          <label for="type">Tipo de Tarea</label>
+          <select id="type" formControlName="type"
+            [class.invalid]="isInvalid('type')">
+            <option value>Seleccione...</option>
+            <option value="Hogar">Hogar</option>
+            <option value="Trabajo">Trabajo</option>
+            <option value="Hábito">Hábito</option>
+          </select>
+          <div class="error-message" *ngIf="isInvalid('type')">
+            {{ getFieldErrorMessage('type','required') }}
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="priority">Prioridad</label>
+          <select id="priority" formControlName="priority"
+            [class.invalid]="isInvalid('priority')">
+            <option value>Seleccione...</option>
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
+          </select>
+          <div class="error-message" *ngIf="isInvalid('priority')">
+            {{ getFieldErrorMessage('priority','required') }}
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="description">Descripción</label>
+          <textarea rows="5" cols="30" pInputTextarea id="title"
+            formControlName="title"
+            [class.invalid]="isInvalid('title')"></textarea>
+          <div class="error-message" *ngIf="isInvalid('title')">
+            {{ getFieldErrorMessage('title','required') }}
+            {{ getFieldErrorMessage('title', 'minlength') }}
+            {{ getFieldErrorMessage('title', 'maxlength') }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="reset-button"
+        (click)="resetForm()">Reiniciar</button>
+      <button type="submit" class="submit-button"
+        [disabled]="!registrationForm.valid || isSubmitting"
+        [ngClass]="{ 'disabled-button': !registrationForm.valid || isSubmitting }">
+        <span *ngIf="isSubmitting" class="spinner"></span>
+        {{ isSubmitting ? 'Enviando...' : 'Enviar' }}
+      </button>
+    </div>
+    <h5 class="success"> {{ isComplete ? 'Tarea Creada' : '' }}</h5>
+  </form>
+</div>

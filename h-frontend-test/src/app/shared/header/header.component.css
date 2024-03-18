@@ -1,0 +1,18 @@
+.header {
+  background: transparent;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%; 
+  max-height: 100px;
+  transition: background-color 0.3s;
+}
+
+.logo img {
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.white-bg {
+  background-color: rgb(0, 0, 0);
+}
+

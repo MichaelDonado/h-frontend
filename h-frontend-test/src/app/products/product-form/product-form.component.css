@@ -1,0 +1,150 @@
+.container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: white;
+}
+
+.container-form {
+  margin: 10px auto;
+}
+
+.title {
+  text-align: center;
+  color: black;
+}
+
+.divider {
+  height: 3px;
+  background-color: black;
+  margin: 10px 0;
+}
+
+.fields-container {
+  display: flex;
+  justify-content: center;
+}
+
+.field {
+  flex: 1;
+  margin: 26px 140px 0px 10px;
+  margin-bottom: 40px;
+  width: 85%;
+}
+
+.field label {
+  padding-bottom: 4px;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px;
+  margin: 0px 10%;
+
+}
+
+.reset-button {
+  background-color: #f0f0f0;
+  color: #0f275c;
+  padding: 15px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.submit-button {
+  padding: 15px 20px;
+  font-size: 14px;
+  background-color: #ffdd05;
+  color: #0f275c;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  border-radius: 2px;
+  font-weight: bold;
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  top: 30%;
+  right: 48px;
+  width: 1rem;
+  height: 1rem;
+  border: 0.15rem solid rgba(0, 0, 0, 0.2);
+  border-top-color: #0f275c;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.disabled-button {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.success {
+  color: green;
+  text-align: center;
+}
+
+/* Estilo para el contenedor de los campos */
+.field {
+  margin-bottom: 20px;
+}
+
+/* Estilo para las etiquetas de los campos */
+.field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilo para los selectores */
+.field select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Asegura que el padding no afecte al ancho del elemento */
+}
+
+/* Estilo para los mensajes de error */
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+/* Estilo para resaltar campos inválidos */
+.invalid select {
+  border-color: red;
+}

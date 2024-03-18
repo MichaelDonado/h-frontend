@@ -1,0 +1,68 @@
+<div class="table-actions">
+  <div class="search-box">
+    <h2>Lista de Tareas</h2>
+  </div>
+  <button class="add-button" (click)="goToAddProduct()">Agregar</button>
+</div>
+<div class="container">
+  <div class="container-table">
+    <p-table [value]="products" [(selection)]="selectedItems" [columns]="cols" dataKey="id" [paginator]="true" [rows]="5" [reorderableColumns]="true">
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th style="width:3rem"></th>
+            <th style="width: 4rem">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+              <th *ngFor="let col of columns" pSortableColumn={{col.field}} pReorderableColumn>
+                {{col.header}} <p-sortIcon field={{col.field}}></p-sortIcon>
+            </th>
+
+              <th></th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-columns="columns" let-index="rowIndex" let-task>
+          <tr>
+            <tr [pReorderableRow]="index">
+            <td>
+              <span class="pi pi-bars" pReorderableRowHandle></span>
+            </td>
+            <td>
+              <p-tableCheckbox [value]="task"></p-tableCheckbox>
+            </td>
+              <td *ngFor="let col of columns">
+                {{task[col.field]}}
+            </td>
+              <td>
+                <div class="options-container">
+                  <button class="options-button" (click)="showOptions($event, task.id)">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <div class="options-dialog" [id]="'optionsDialog' + task.id">
+                    <button class="option-button" (click)="goToEditProduct(task)">
+                      <i class="far fa-edit"></i> Editar
+                    </button>
+                    <button class="option-button" (click)="showDialogDeleteProduct(task.id)">
+                      <i class="far fa-trash-alt"></i> Eliminar
+                    </button>
+                  </div>
+                </div>
+              </td>
+          </tr>
+      </ng-template>
+   </p-table>
+   
+  </div>
+  <div class="confirmation-dialog" [ngClass]="{ 'show': showDialog }">
+    <div class="confirmation-content">
+      <h2>Confirmar Eliminación</h2>
+      <p>¿Estás seguro de que deseas eliminar este producto?</p>
+      <button class="confirm-button" (click)="confirmDelete()">Confirmar</button>
+      <button class="cancel-button" (click)="cancelDelete()">Cancelar</button>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="results-summary">
+      {{ products.length }} Resultados
+    </div>
+  </div>
+</div>

@@ -1,0 +1,215 @@
+.container {
+  margin: 10px 40px 40px 40px;
+  padding: 20px 20px 80px 20px;
+  max-height: 450px;
+  background-color: white;
+}
+
+.table-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding: 0px 40px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-box input[type="text"] {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.add-button {
+  padding: 15px 20px;
+  font-size: 14px;
+  background-color: #ffdd05;
+  color: #0f275c;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.container-table {
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  table-layout: fixed;
+  overflow-x: auto;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0px;
+  background-color: #f8f9fa;
+  height: 80px;
+  z-index: 1;
+  color: #595858;
+}
+
+.sticky-header th {
+  padding: 8px;
+  text-align: left;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-table td {
+  padding: 8px;
+  border-top: 1px solid #dee2e6;
+  text-align: left;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-table th:first-child,
+.custom-table td:first-child {
+  border-left: none;
+}
+
+.custom-table th:last-child,
+.custom-table td:last-child {
+  border-right: none;
+}
+
+.custom-table th {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+.custom-table a {
+  margin-right: 5px;
+}
+
+.logo-cell img {
+  border-radius: 50%;
+  max-width: 80px;
+  height: 80px;
+  object-fit: fill;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.footer .results-summary {
+  font-size: 14px;
+}
+
+.footer .pagination {
+  font-size: 14px;
+}
+
+.footer select {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.options-container {
+  position: relative;
+  display: inline-block;
+}
+
+.options-dialog {
+  display: none;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.option-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.option-button i {
+  font-size: 16px;
+}
+
+.options-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.confirmation-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.confirmation-dialog.show {
+  display: flex;
+}
+
+.confirmation-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.confirmation-content h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.confirmation-content p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.confirm-button,
+.cancel-button {
+  padding: 8px 20px;
+  margin: 0 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.confirm-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #ccc;
+}
